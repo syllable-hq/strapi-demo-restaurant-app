@@ -25,34 +25,15 @@ mongod
 
 ## API
 
-**4 —** Go to the `backend` folder and install the dependencies.
+**4 —** Go to the `backend` folder, install the dependencies and start API.
 
 ```bash
 cd backend
-npm install
+npm install && npm start
 # It take few minutes
 ```
 
-## CLIENT
-
-**4 —** Go to the `frontend` folder and install the dependencies.
-
-```bash
-cd frontend
-npm install
-# It take few minutes
-```
-
-**5 —** Start the restaurants backend and frontend.
-
-```bash
-# Start backend
-cd backend && npm start
-# Start frontend
-cd frontend && npm start
-```
-
-**4 —** Update permissions.
+**5 —** Update permissions.
 
 You have to go in your admin panel and update permission of the `Authenticated` role (Plugins > Users & Permissions > Authenticated).
 
@@ -61,6 +42,16 @@ Allow these actions:
 - Restaurant:
   - find
   - findone
+
+## CLIENT
+
+**6 —** Go to the `frontend` folder, install the dependencies and start CLIENT.
+
+```bash
+cd frontend
+npm install && npm start
+# It take few minutes
+```
 
 ## Bootstrap application data
 
