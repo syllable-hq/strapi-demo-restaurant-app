@@ -7,7 +7,7 @@
 - Create custom routes / controllers / services.
 - Use groups and authentication permissions
 
-## Setup
+# Setup
 
 **1 —** Clone the repository.
 
@@ -23,7 +23,7 @@ git clone git@github.com:syllable-hq/strapi-demo-restaurant-app.git
 mongod
 ```
 
-# API
+## API
 
 **4 —** Go to the `backend` folder and install the dependencies.
 
@@ -33,7 +33,7 @@ npm install
 # It take few minutes
 ```
 
-# CLIENT
+## CLIENT
 
 **4 —** Go to the `frontend` folder and install the dependencies.
 
