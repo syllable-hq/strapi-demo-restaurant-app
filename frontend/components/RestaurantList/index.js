@@ -3,14 +3,13 @@ import gql from "graphql-tag";
 import Link from "next/link";
 import { graphql } from "react-apollo";
 import {
-  Button,
   Card,
   CardBody,
-  CardColumns,
   CardImg,
-  CardSubtitle
 } from "reactstrap";
 import { CardText, CardTitle, Col, Row } from "reactstrap";
+
+import { env } from "../../utils/constants";
 
 const RestaurantList = (
   { data: { loading, error, restaurants }, search },
@@ -38,7 +37,7 @@ const RestaurantList = (
                 <CardImg
                   top={true}
                   style={{ height: 250 }}
-                  src={``}
+                  src={`${env.API_URL}/${res.image.url}`}
                 />
                 <CardBody>
                   <CardTitle>{res.name}</CardTitle>

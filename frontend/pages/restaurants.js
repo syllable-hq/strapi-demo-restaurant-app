@@ -19,8 +19,6 @@ import Cart from "../components/Cart/Cart";
 import defaultPage from "../hocs/defaultPage";
 import { env } from "../utils/constants";
 
-const apiUrl = env.API_URL;
-
 class Restaurants extends React.Component {
   constructor(props) {
     super(props);
