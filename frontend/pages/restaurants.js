@@ -9,9 +9,7 @@ import {
   Button,
   Card,
   CardBody,
-  CardColumns,
   CardImg,
-  CardSubtitle,
   CardText,
   CardTitle,
   Col,
@@ -19,6 +17,9 @@ import {
 } from "reactstrap";
 import Cart from "../components/Cart/Cart";
 import defaultPage from "../hocs/defaultPage";
+import { env } from "../utils/constants";
+
+const apiUrl = env.API_URL;
 
 class Restaurants extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Restaurants extends React.Component {
       isAuthenticated
     } = this.props;
     if (error) return "Error Loading Dishes";
-
+    debugger;
     if (restaurant) {
       return (
         <>
@@ -52,7 +53,7 @@ class Restaurants extends React.Component {
                     <CardImg
                       top={true}
                       style={{ height: 250 }}
-                      src={`${process.env.API_URL || 'http://localhost:1337'}${res.image.url}`}
+                      src={`${env.API_URL}/${res.image.url}`}
                     />
                     <CardBody>
                       <CardTitle>{res.name}</CardTitle>

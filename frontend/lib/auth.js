@@ -6,7 +6,9 @@ import Strapi from "strapi-sdk-javascript/build/main";
 
 import Router from "next/router";
 
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+import { env } from "../utils/constants";
+
+const apiUrl = env.API_URL;
 const strapi = new Strapi(apiUrl);
 
 export const strapiRegister = (username, email, password) => {

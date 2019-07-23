@@ -8,8 +8,9 @@ import { FormGroup, Label, Input, FormText, Row, Col } from "reactstrap";
 import { injectStripe } from "react-stripe-elements";
 import Strapi from "strapi-sdk-javascript/build/main";
 import Router from "next/router";
+import { env } from "../../utils/constants";
 
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = env.API_URL;
 const strapi = new Strapi(apiUrl);
 /* components/Checkout/CheckoutForm.js */
 class CheckoutForm extends React.Component {
@@ -39,19 +40,19 @@ class CheckoutForm extends React.Component {
     console.log(context);
     console.log(this.props.stripe.createToken())
     this.props.stripe.createToken()
-    .then(res => {
-      strapi
-        .createEntry("orders", {
-          amount: context.total,
-          dishes: context.items,
-          address: data.address,
-          city: data.city,
-          state: data.state,
-          token: res.token.id
-        })
-        .then(Router.push("/"));
-    })
-    .catch(err => this.setState({ error: err}))
+      .then(res => {
+        strapi
+          .createEntry("orders", {
+            amount: context.total,
+            dishes: context.items,
+            address: data.address,
+            city: data.city,
+            state: data.state,
+            token: res.token.id
+          })
+          .then(Router.push("/"));
+      })
+      .catch(err => this.setState({ error: err }))
   }
 
   render() {
